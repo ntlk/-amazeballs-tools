@@ -1,6 +1,6 @@
 const prompt = require('prompt');
 const nconf = require('nconf');
-const exec = require('child_process').exec;
+const execSync = require('child_process').execSync;
 const s3 = require('s3');
 
 require('dotenv').config();
@@ -76,17 +76,17 @@ prompt.get(schema, (err, result) => {
   let title = `Episode ${result.number} — ${result.title}`;
 
   // clean the output dir
-  exec('rm output/*', log);
+  execSync('rm output/*', log);
 
   // turn the wav into mp3, m4a and ogg
   // this needs to be done with promises because sometimes we try to upload a non-existent file
   let outputPath = `output/`;
   let outputName = `AMAZEBALLS#${result.number}`;
   let outputFilename = outputPath + outputName;
-  exec(`ffmpeg -i ${result.wavFile} -vn -ar 44100 -ac 2 -ab 192k -f mp3 ${outputFilename}.mp3`, log);
-  exec(`ffmpeg -i ${result.wavFile} -c:a libvorbis -qscale:a 5 ${outputFilename}.ogg`, log);
-  exec(`ffmpeg -i ${result.wavFile} -c:a libfdk_aac -vbr 3 ${outputFilename}.m4a`, log);
-  exec('chmod -R +r output/');
+  execSync(`ffmpeg -i ${result.wavFile} -vn -ar 44100 -ac 2 -ab 192k -f mp3 ${outputFilename}.mp3`, log);
+  execSync(`ffmpeg -i ${result.wavFile} -c:a libvorbis -qscale:a 5 ${outputFilename}.ogg`, log);
+  execSync(`ffmpeg -i ${result.wavFile} -c:a libfdk_aac -vbr 3 ${outputFilename}.m4a`, log);
+  execSync('chmod -R +r output/');
 
   // update the file metadata
   // ...

@@ -62,6 +62,7 @@ prompt.get(schema, (err, result) => {
   // add the links to the homepage
   // update the itunes feeds (both, lol)
   // push the homepage
+  // add the new episode to huffduffer
   // tweet out the links
 
   console.log('stuff happened!');

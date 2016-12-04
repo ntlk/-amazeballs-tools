@@ -1,0 +1,23 @@
+{
+  "name": "amazetools",
+  "version": "1.0.0",
+  "description": "A suite of tools for automating the creation of each episode of Amazeballs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ntlk/amazetools.git"
+  },
+  "author": "ntlk and hyper_linda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ntlk/amazetools/issues"
+  },
+  "homepage": "https://github.com/ntlk/amazetools#readme",
+  "dependencies": {
+    "nconf": "^0.8.4",
+    "prompt": "^1.0.0"
+  }
+}

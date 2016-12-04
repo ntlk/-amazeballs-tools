@@ -17,7 +17,10 @@
   },
   "homepage": "https://github.com/ntlk/amazetools#readme",
   "dependencies": {
+    "aws-sdk": "^2.7.10",
+    "dotenv": "^2.0.0",
     "nconf": "^0.8.4",
-    "prompt": "^1.0.0"
+    "prompt": "^1.0.0",
+    "s3": "^4.4.0"
   }
 }

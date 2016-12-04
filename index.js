@@ -64,8 +64,6 @@ prompt.get(schema, (err, result) => {
   exec(`ffmpeg -i ${result.wavFile} -c:a libvorbis -qscale:a 5 ${outputFilename}.ogg`, log);
   exec(`ffmpeg -i ${result.wavFile} -c:a libfdk_aac -vbr 3 ${outputFilename}.m4a`, log);
 
-  nconf.set('createdFiles', true');
-
   // update the file metadata
   // ...
 
